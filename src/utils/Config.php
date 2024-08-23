@@ -151,7 +151,7 @@ class Config {
                     $content = implode("\r\n", array_keys($this->config));
                     break;
             }
-            @file_put_contents($this->file, $content, LOCK_EX);
+            file_put_contents($this->file, $content);
             return true;
         } else {
             return false;

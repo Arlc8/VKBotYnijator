@@ -42,7 +42,9 @@ class Docs {
             CURLOPT_POST => true,
             CURLOPT_POSTFIELDS => [
                 'file' => new \CURLFile($path),
-            ]
+            ],
+            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_SSL_VERIFYPEER => false
         ]);
         $response = json_decode(curl_exec($myCurl), 1);
 
